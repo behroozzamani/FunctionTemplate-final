@@ -1,0 +1,17 @@
+2022-08-02 09:51:26,853 DEBUG [pool-1-thread-1] i.v.c.l.LoggerFactory [?:?] Using io.vertx.core.logging.SLF4JLogDelegateFactory from Demo
+2022-08-02 09:57:42,836 INFO [pool-1-thread-1] a.u.d.e.c.v.VerticleManager [VerticleManager.java:62] Deployed 40 verticles. from Demo
+2022-08-02 09:57:42,941 INFO [pool-1-thread-1] a.u.d.e.c.c.Control [Control.java:63] Pausing enactment. from Demo
+2022-08-02 09:57:42,958 DEBUG [pool-1-thread-1] a.u.d.e.c.v.InputDataHandler [InputDataHandler.java:81] Availability of the input data modeled by node single Atomic/wait advertized. from Demo
+2022-08-02 09:57:42,959 DEBUG [pool-1-thread-1] a.u.d.e.c.v.InputDataHandler [InputDataHandler.java:81] Availability of the input data modeled by node single Atomic/a advertized. from Demo
+2022-08-02 09:57:42,960 DEBUG [pool-1-thread-1] a.u.d.e.c.v.InputDataHandler [InputDataHandler.java:65] Availability of constant node Constant/10 advertized. from Demo
+2022-08-02 09:58:29,589 INFO [AWT-EventQueue-0] a.u.d.e.c.c.Control [Control.java:53] Resuming enactment. from Demo
+2022-08-02 09:58:29,594 DEBUG [vert.x-eventloop-thread-4] a.u.d.e.c.t.WorkerTransmission [WorkerTransmission.java:104] Thread 114; Task addition_Demo is schedulable. from Demo
+2022-08-02 09:58:29,619 DEBUG [vert.x-eventloop-thread-10] a.u.d.e.c.s.WorkerScheduling [WorkerScheduling.java:138] Thread 120; Task addition_Demo scheduled from Demo
+2022-08-02 09:58:29,619 DEBUG [vert.x-eventloop-thread-1] a.u.d.e.c.e.WorkerEnactment [WorkerEnactment.java:52] Enacting Task addition_Demo from Demo
+2022-08-02 09:58:31,631 DEBUG [vert.x-eventloop-thread-1] a.u.d.e.c.e.WorkerEnactment [WorkerEnactment.java:73] Enactment finished for task addition_Demo. from Demo
+2022-08-02 09:58:31,640 DEBUG [vert.x-eventloop-thread-9] a.u.d.e.c.e.WorkerExtraction [WorkerExtraction.java:84] Thread 119; Data on node addition_Demo/sum available. from Demo
+2022-08-02 09:58:31,641 INFO [vert.x-eventloop-thread-0] a.u.d.e.i.o.OutputDataPrinter [OutputDataPrinter.java:30] Workflow executed correctly. from Demo
+2022-08-02 09:58:31,641 INFO [vert.x-eventloop-thread-0] a.u.d.e.i.o.OutputDataPrinter [OutputDataPrinter.java:31] Enactment result: {"result":13} from Demo
+2022-08-02 09:58:53,665 ERROR [AWT-EventQueue-0] a.u.d.e.c.c.Control [Control.java:75] Stopping not yet properly implemented. from Demo
+2022-08-02 09:58:56,340 ERROR [AWT-EventQueue-0] a.u.d.e.c.c.Control [Control.java:75] Stopping not yet properly implemented. from Demo
+2022-08-02 09:59:05,450 INFO [AWT-EventQueue-0] a.u.d.e.c.c.Control [Control.java:63] Pausing enactment. from Demo
