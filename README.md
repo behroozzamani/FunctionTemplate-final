@@ -1,53 +1,28 @@
-# Function Template
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-## Overview
+# EE-Demo
+This repository provides the opportunity to quickly set up the Apollo Runtime system to observe the (visualized) orchestration of simple example workflows.
 
-Repository for the template used to create serverless functions which can be deployed to cloud providers and converted to Docker images to be used by the [Apollo orchestration platform](https://github.com/Apollo-Core).
+## Demonstrations
 
-## Get the code
+This project contains a series of demonstrations with varying prerequisites. The entry for each demonstration is annotated with a link to a readme containing more detailed setup instructions.
 
-```sh
-git clone https://github.com/Apollo-Workflows/Apollo-Template
-cd Apollo-Template
-```
+Demonstration | Prerequisites | Readme Link | Youtube Link
+--------------|---------------|-------------| -------------
+Basic Functionality and GUI | - Java (11+) <br> - Gradle | [Basic Functionality](https://github.com/Apollo-Core/EE-Demo/tree/master/documentation/BasicFunctionality) | [Basic Functionality](https://www.youtube.com/watch?v=KFoT99tpJBk)
 
-## Documentation
 
-- [Add your own function](./doc/addFunction.md)
-- [Build OpenFaaS Docker images](./doc/openfaas.md)
-- Python layers:
-  - [Create a custom AWS Python layer](./doc/awsLayer.md)
-  - [Create a custom IBM Python layer](./doc/ibmLayer.md)
-- Add a function to auto deployment:
-  - [For AWS](./doc/awsAddDeployment.md)
-  - [For IBM](./doc/ibmAddDeployment.md)
+## Prerequisites
 
-## Autodeploy
+## Running the Demo.
 
-1. Save the credentials for your cloud provider in the according subfolder:
-   - AWS: Go to the service IAM and create a new user with the access type `Programmatic access` and attach the `AdministratorAccess` policy, which is part of the existing policies. You can copy the `Access key ID` and `Secret access key` and put it into the following format and save it under `aws/credentials`:
+1. Clone the repository.
 
-     ```config
-     [default]
-     aws_access_key_id = <Your access key ID>
-     aws_secret_access_key = <Your secret access key>
-     ```
+2. Using the terminal, switch to the directory containing the `build.gradle` file and run `gradlew build` to automatically download the dependencies and build the project.
 
-   - IBM:
-   - Create the `ibmcloud_api_key` [here](https://cloud.ibm.com/iam/apikeys) add it to `ibm/terraform.tfvars`
-   - Add S3 credentials from AWS to `ibm/s3Credentials.json`
-2.
-   - A: Deploy to all providers:
-    Run from root dir `docker run --rm -it --entrypoint=/app/deployAll.sh -v ${PWD}:/app/ chrisengelhardt/apollo-autodeploy`
-   - B: Deploy on a single provider with custom settings:
-      - Go to the directory of the corresponding provider
-      - Run `docker run --network=host --rm -v ${PWD}:/app/ -v ${PWD}/../functions:/functions/ chrisengelhardt/apollo-autodeploy` to deploy the functions
-      - Run `docker run --network=host --rm -v ${PWD}:/app/ -v ${PWD}/../functions:/functions/ chrisengelhardt/apollo-autodeploy --mappings` to create the `typeMappings.json` file required by Apollo
+3. Run the command `gradlew run` to start Apollo's configuration GUI.
 
-**Note 1:** For IBM you have to create a namespace first and place it into `ibm.tf` on all lines with `namespace = "YOURNAMESPACE"`.
+4. Click the "Load" button and load any of the configurations from the `configs/` folder of the project, e.g., `singleAtomicConfig.xml`.
 
-**Note 2:** On some systems, the Docker container used during the deployment process can sometimes have problems connecting to the Internet, resulting in an error message. Known fixes for the problem are:
-
-- Kill the corresponding container and rerun the script
-- OR restart your computer and rerun the script
+5. Click the "Run" button.
 
